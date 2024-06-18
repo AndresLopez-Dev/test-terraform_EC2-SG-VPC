@@ -6,7 +6,7 @@ variable "vpc_name" {
   description = "Nombre de la vpc"  
 }
 
-variable "enviroment" {
+variable "environment" {
   description = "Ambiente"
   default     = "test"
 }

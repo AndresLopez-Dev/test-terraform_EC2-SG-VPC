@@ -25,7 +25,7 @@ resource "aws_security_group" "nginx-server-sg" {
 
   tags = {
     Name       = "${var.sg_name}-sg"
-    Enviroment = var.enviroment
+    Enviroment = var.environment
     Owner      = var.owner
     Team       = var.team
     Project    = var.project

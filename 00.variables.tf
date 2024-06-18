@@ -36,7 +36,7 @@ variable "ami_id" {
 }
 
 # Tags generales
-variable "enviroment" {
+variable "environment" {
   description = "Ambiente"
   default     = "test"
 }

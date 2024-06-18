@@ -21,7 +21,7 @@ variable "instance_name" {
   default     = "nginx-server"
 }
 
-variable "enviroment" {
+variable "environment" {
   description = "Ambiente de la aplicacion"
   default     = "test"
 }

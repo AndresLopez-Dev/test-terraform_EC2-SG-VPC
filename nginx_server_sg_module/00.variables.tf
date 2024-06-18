@@ -6,7 +6,7 @@ variable "sg_name" {
   description = "Nombre del sg"
 }
 
-variable "enviroment" {
+variable "environment" {
   description = "Ambiente"
   default     = "test"
 }

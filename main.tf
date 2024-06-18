@@ -6,7 +6,7 @@ module "vpc_test" {
 
   vpc_name         = var.instance_name
   ## Tags
-  enviroment       = var.enviroment
+  environment       = var.environment
   owner            = var.owner
   team             = var.team
   project          = var.project
@@ -18,7 +18,7 @@ module "nginx_server_sg" {
   sg_name = var.instance_name
   vpc_id  = module.vpc_test.vpc_id
   ## Tags
-  enviroment = var.enviroment
+  environment = var.environment
   owner      = var.owner
   team       = var.team
   project    = var.project
@@ -36,7 +36,7 @@ module "nginx_server_test" {
 
   instance_name = var.instance_name
   ## Tags
-  enviroment = var.enviroment
+  environment = var.environment
   owner      = var.owner
   team       = var.team
   project    = var.project

@@ -17,7 +17,7 @@ resource "aws_instance" "nginx-server" {
 
   tags = {
     Name       = var.instance_name
-    Enviroment = var.enviroment
+    Enviroment = var.environment
     Owner      = var.owner
     Team       = var.team
     Project    = var.project
