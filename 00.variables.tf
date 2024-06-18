@@ -2,7 +2,6 @@
 # Provider
 variable "region" {
   description = "Region"
-  default = "us-east-1"
 }
 
 variable "access_key" {
@@ -16,6 +15,7 @@ variable "secret_key" {
 ## VPC - Redes
 variable "vpc_cidr" {
   description = "CIDR de la VPC"
+  default = "172.31.0.0/16"
 }
 
 variable "public_subnets_cidr" {
