@@ -35,6 +35,11 @@ variable "ami_id" {
   description = "ID de la AMI"
 }
 
+variable "instance_code" {
+  description = "Insercion de codigo en la EC2"
+  default = ""
+}
+
 # Tags generales
 variable "environment" {
   description = "Ambiente"

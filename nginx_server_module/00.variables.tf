@@ -14,6 +14,10 @@ variable "instance_sg_id" {
   description = "sg de la instancia"
 }
 
+variable "instance_code" {
+  description = "Insercion de codigo en la EC2"
+}
+
 ## TAGS
 variable "instance_name" {
   description = "Nombre de la instancia"

@@ -3,12 +3,7 @@ resource "aws_instance" "nginx-server" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id = var.instance_subnet_id
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo yum install -y nginx
-              sudo systemctl enable nginx
-              sudo systemctl start nginx
-              EOF
+  user_data = var.instance_code
 
   key_name = aws_key_pair.nginx-server-ssh.key_name
 

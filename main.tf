@@ -33,6 +33,7 @@ module "nginx_server_test" {
   instance_type      = var.instance_type
   instance_subnet_id = module.vpc_test.public_subnet_id_us_east_1a
   instance_sg_id     = module.nginx_server_sg.sg_id
+  instance_code      = var.instance_code
 
   instance_name = var.instance_name
   ## Tags
