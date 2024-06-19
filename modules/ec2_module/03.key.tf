@@ -1,5 +1,5 @@
 
-resource "aws_key_pair" "nginx-server-ssh" {
+resource "aws_key_pair" "ec2-ssh" {
   key_name   = "${var.instance_name}-ssh"
   public_key = file("./${var.instance_name}.key.pub")
 
