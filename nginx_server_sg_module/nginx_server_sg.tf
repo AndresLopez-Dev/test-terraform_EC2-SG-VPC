@@ -1,7 +1,7 @@
 ## Grupo de seguridad
 resource "aws_security_group" "nginx-server-sg" {
-  name        = var.sg_name
-  vpc_id      = var.vpc_id
+  name   = var.sg_name
+  vpc_id = var.vpc_id
 
   description = "Security group allowing SSH and HTTP access"
   ingress {

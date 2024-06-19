@@ -21,7 +21,7 @@ variable "instance_code" {
 ## TAGS
 variable "instance_name" {
   description = "Nombre de la instancia"
-  type = string
+  type        = string
   default     = "nginx-server"
 }
 

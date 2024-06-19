@@ -3,7 +3,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_name" {
-  description = "Nombre de la vpc"  
+  description = "Nombre de la vpc"
 }
 
 variable "environment" {

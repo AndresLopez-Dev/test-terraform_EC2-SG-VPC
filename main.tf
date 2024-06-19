@@ -4,12 +4,12 @@ module "vpc_test" {
   vpc_cidr_block   = var.vpc_cidr
   pub_subnets_cidr = var.public_subnets_cidr
 
-  vpc_name         = var.instance_name
+  vpc_name = var.instance_name
   ## Tags
-  environment      = var.environment
-  owner            = var.owner
-  team             = var.team
-  project          = var.project
+  environment = var.environment
+  owner       = var.owner
+  team        = var.team
+  project     = var.project
 }
 
 module "nginx_server_sg" {
@@ -19,9 +19,9 @@ module "nginx_server_sg" {
   vpc_id  = module.vpc_test.vpc_id
   ## Tags
   environment = var.environment
-  owner      = var.owner
-  team       = var.team
-  project    = var.project
+  owner       = var.owner
+  team        = var.team
+  project     = var.project
 }
 
 
@@ -38,9 +38,9 @@ module "nginx_server_test" {
   instance_name = var.instance_name
   ## Tags
   environment = var.environment
-  owner      = var.owner
-  team       = var.team
-  project    = var.project
+  owner       = var.owner
+  team        = var.team
+  project     = var.project
 }
 
 output "nginx_test_ip" {

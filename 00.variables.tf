@@ -15,7 +15,7 @@ variable "secret_key" {
 ## VPC - Redes
 variable "vpc_cidr" {
   description = "CIDR de la VPC"
-  default = "172.31.0.0/16"
+  default     = "172.31.0.0/16"
 }
 
 variable "public_subnets_cidr" {
@@ -37,7 +37,7 @@ variable "ami_id" {
 
 variable "instance_code" {
   description = "Insercion de codigo en la EC2"
-  default = ""
+  default     = ""
 }
 
 # Tags generales
