@@ -10,9 +10,10 @@ resource "aws_instance" "nginx-server" {
               sudo systemctl start nginx
               EOF
 
+  key_name = aws_key_pair.nginx-server-ssh.key_name
+
   vpc_security_group_ids = [
     var.instance_sg_id,
-    # aws_security_group.nginx-server-sg.id
   ]
 
   tags = {

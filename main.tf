@@ -6,7 +6,7 @@ module "vpc_test" {
 
   vpc_name         = var.instance_name
   ## Tags
-  environment       = var.environment
+  environment      = var.environment
   owner            = var.owner
   team             = var.team
   project          = var.project
