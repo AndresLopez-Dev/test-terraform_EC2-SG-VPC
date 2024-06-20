@@ -1,0 +1,27 @@
+## Provider
+region = "us-east-1"
+access_key = "access_key"
+secret_key = "secret_key"
+
+## VPC - Redes
+vpc_cidr = "172.31.0.0/16"
+public_subnets_cidr = {
+    "us-east-1a" : "172.31.10.0/24",
+    "us-east-1b" : "172.31.11.0/24",
+  }
+## Instancia
+instance_name = "example-name"
+instance_type = "t2.micro"
+ami_id        = "ami-08a0d1e16fc3f61ea"
+instance_code = <<-EOF
+                #!/bin/bash
+                sudo yum install -y nginx
+                sudo systemctl enable nginx
+                sudo systemctl start nginx
+                EOF
+
+## Tags
+environment = "test"
+owner      = "owner"
+team       = "team"
+project    = "example terraform"
