@@ -13,7 +13,7 @@ module "vpc_test" {
 }
 
 module "ec2_sg" {
-  source = "./modules/security_group_module"
+  source = "./modules/ec2_security_group_module"
 
   sg_name = var.instance_name
   vpc_id  = module.vpc_test.vpc_id
