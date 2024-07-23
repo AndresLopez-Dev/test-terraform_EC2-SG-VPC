@@ -19,6 +19,10 @@ output "private_subnets_ids" {
   } : null
 }
 
+output "private_subnet_ids" {
+  value = [for subnet in aws_subnet.private_subnets : subnet.id]
+}
+
 output "private_subnet_id_us_east_1a" {
   description = "ID de la subred privada en us-east-1a"
   value       = length(aws_subnet.private_subnets) > 0 ? lookup({ for net in aws_subnet.private_subnets : net.availability_zone => net.id }, "us-east-1a") : null

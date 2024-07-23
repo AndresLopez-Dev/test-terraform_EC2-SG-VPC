@@ -1,8 +1,8 @@
 module "vpc_test" {
   source = "./modules/vpc_module"
 
-  vpc_cidr_block   = var.vpc_cidr
-  pub_subnets_cidr = var.public_subnets_cidr
+  vpc_cidr_block    = var.vpc_cidr
+  pub_subnets_cidr  = var.public_subnets_cidr
   priv_subnets_cidr = var.private_subnets_cidr
 
   vpc_name = var.instance_name
@@ -64,22 +64,33 @@ output "vpc_sub_priv_id" {
   value       = module.vpc_test.private_subnet_id_us_east_1a
 }
 
+output "vpc_sub_priv_ids" {
+  description = "id subredes publicas"
+  value       = module.vpc_test.private_subnets_ids
+}
+
+output "vpc_sub_privs_ids" {
+  description = "id subredes publicas"
+  value       = module.vpc_test.private_subnet_ids
+}
+
 module "rds_test" {
   source = "./modules/rds_module"
 
-  db_identifier = var.db_identifier
-  db_storage = var.db_storage
-  db_engine = var.db_engine
+  subnet_ids        = module.vpc_test.private_subnet_ids
+  db_identifier     = var.db_identifier
+  db_storage        = var.db_storage
+  db_engine         = var.db_engine
   db_engine_version = var.db_engine_version
 
   rds_instance_type = var.rds_instance_type
 
-  db_name = var.db_name
+  db_name     = var.db_name
   db_username = var.db_username
   db_password = var.db_password
 
   environment = var.environment
-  owner = var.owner
-  team = var.team
-  project = var.project
+  owner       = var.owner
+  team        = var.team
+  project     = var.project
 }

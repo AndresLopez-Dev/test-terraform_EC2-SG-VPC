@@ -40,3 +40,8 @@ variable "team" {
 variable "project" {
   description = "Proyecto"
 }
+
+variable "subnet_ids" {
+  type        = list(string)
+  description = "List of subnet IDs to use for the RDS instance"
+}

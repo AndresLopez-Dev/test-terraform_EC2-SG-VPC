@@ -77,7 +77,7 @@ variable "db_identifier" {
 variable "db_storage" {
   description = "Almacenamiento de la DB"
 }
-  
+
 variable "db_engine" {
   description = "Motor de la DB"
 }
@@ -87,7 +87,7 @@ variable "db_engine_version" {
 variable "rds_instance_type" {
   description = "Tipo de instancia"
 }
-  
+
 variable "db_name" {
   description = "Nombre de la DB"
 }

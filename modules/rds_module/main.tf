@@ -1,4 +1,5 @@
 resource "aws_db_instance" "rds_instance" {
+  db_subnet_group_name = aws_db_subnet_group.private_subnet_group.name
   identifier = var.db_identifier
 
   allocated_storage = var.db_storage
