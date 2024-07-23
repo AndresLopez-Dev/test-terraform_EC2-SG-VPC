@@ -8,7 +8,7 @@ resource "aws_route_table" "vpc_rt" {
   }
 
   tags = {
-    Name = "rt-${var.vpc_name}"
+    Name = "rt-${var.vpc_name}-public"
   }
   depends_on = [aws_vpc.test_vpc]
 }
@@ -33,6 +33,7 @@ resource "aws_route_table" "private_rt" {
   tags = {
     Name = "rt-${var.vpc_name}-private"
   }
+  depends_on = [aws_vpc.test_vpc]
 }
 
 ## Asociacion de la tabla de rutas para subredes privadas
@@ -40,4 +41,5 @@ resource "aws_route_table_association" "private_rt_subnets" {
   for_each       = aws_subnet.private_subnets
   subnet_id      = each.value.id
   route_table_id = aws_route_table.private_rt.id
+  depends_on     = [aws_subnet.private_subnets, aws_route_table.private_rt]
 }

@@ -26,6 +26,7 @@ variable "project" {
 ## Subnets
 
 variable "pub_subnets_cidr" {
+  type = map(string)
   description = "Subredes publicas"
 }
 
