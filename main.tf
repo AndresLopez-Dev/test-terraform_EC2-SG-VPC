@@ -50,15 +50,19 @@ output "nginx_test_ip" {
 }
 
 output "vpc_sub_pub_id" {
-  description = "id subredes"
+  description = "id subredes publicas"
   value       = module.vpc_test.public_subnet_id_us_east_1a
 }
 
 output "vpc_sub_pub_ids" {
-  description = "id subredes"
+  description = "id subredes publicas"
   value       = module.vpc_test.public_subnets_ids
 }
 
+output "vpc_sub_priv_id" {
+  description = "id subredes privadas"
+  value       = module.vpc_test.private_subnet_id_us_east_1a
+}
 
 module "rds_test" {
   source = "./modules/rds_module"
