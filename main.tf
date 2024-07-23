@@ -65,12 +65,12 @@ output "vpc_sub_priv_id" {
 }
 
 output "vpc_sub_priv_ids" {
-  description = "id subredes publicas"
+  description = "id subredes privadas"
   value       = module.vpc_test.private_subnets_ids
 }
 
 output "vpc_sub_privs_ids" {
-  description = "id subredes publicas"
+  description = "id subredes privadas"
   value       = module.vpc_test.private_subnet_ids
 }
 
