@@ -74,23 +74,23 @@ output "vpc_sub_privs_ids" {
   value       = module.vpc_test.private_subnet_ids
 }
 
-# module "rds_test" {
-#   source = "./modules/rds_module"
+module "rds_test" {
+  source = "./modules/rds_module"
 
-#   subnet_ids        = module.vpc_test.private_subnet_ids
-#   db_identifier     = var.db_identifier
-#   db_storage        = var.db_storage
-#   db_engine         = var.db_engine
-#   db_engine_version = var.db_engine_version
+  subnet_ids        = module.vpc_test.private_subnet_ids
+  db_identifier     = var.db_identifier
+  db_storage        = var.db_storage
+  db_engine         = var.db_engine
+  db_engine_version = var.db_engine_version
 
-#   rds_instance_type = var.rds_instance_type
+  rds_instance_type = var.rds_instance_type
 
-#   db_name     = var.db_name
-#   db_username = var.db_username
-#   db_password = var.db_password
+  db_name     = var.db_name
+  db_username = var.db_username
+  db_password = var.db_password
 
-#   environment = var.environment
-#   owner       = var.owner
-#   team        = var.team
-#   project     = var.project
-# }
+  environment = var.environment
+  owner       = var.owner
+  team        = var.team
+  project     = var.project
+}
