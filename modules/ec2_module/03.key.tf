@@ -6,8 +6,8 @@ resource "aws_key_pair" "ec2-ssh" {
   tags = {
     Name       = "${var.instance_name}-ssh"
     Enviroment = var.environment
-    Owner      = "David 3htp"
-    Team       = "DevOps"
-    Project    = "Aprendiendo terraform"
+    Owner      = var.owner
+    Team       = var.team
+    Project    = var.project
   }
 }
