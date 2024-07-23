@@ -42,6 +42,6 @@ variable "project" {
 }
 
 variable "subnet_ids" {
-  type        = list(string)
+  type        = map(string)
   description = "List of subnet IDs to use for the RDS instance"
 }
