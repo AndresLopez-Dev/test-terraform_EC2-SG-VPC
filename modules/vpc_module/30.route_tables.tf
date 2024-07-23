@@ -14,7 +14,7 @@ resource "aws_route_table" "vpc_rt" {
 }
 
 
-## Asociacion de la tabla de rutas
+## Asociacion de la tabla de rutas para subredes publicas
 resource "aws_route_table_association" "public_rt_subnets" {
   for_each       = aws_subnet.public_subnets
   subnet_id      = each.value.id
@@ -35,6 +35,7 @@ resource "aws_route_table" "private_rt" {
   }
 }
 
+## Asociacion de la tabla de rutas para subredes privadas
 resource "aws_route_table_association" "private_rt_subnets" {
   for_each       = aws_subnet.private_subnets
   subnet_id      = each.value.id
