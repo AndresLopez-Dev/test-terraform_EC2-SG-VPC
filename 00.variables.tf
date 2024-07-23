@@ -22,6 +22,14 @@ variable "public_subnets_cidr" {
   description = "CIDR de las subredes publicas"
 }
 
+variable "private_subnets_cidr" {
+  description = "CIDR de las subredes privadas"
+  default = {
+    "us-east-1a" = "172.31.20.0/24"
+    "us-east-1b" = "172.31.21.0/24"
+  }
+}
+
 # Instancia
 variable "instance_name" {
   description = "Nombre de la instancia"

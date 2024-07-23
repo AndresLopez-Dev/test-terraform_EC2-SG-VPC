@@ -3,6 +3,7 @@ module "vpc_test" {
 
   vpc_cidr_block   = var.vpc_cidr
   pub_subnets_cidr = var.public_subnets_cidr
+  priv_subnets_cidr = var.private_subnets_cidr
 
   vpc_name = var.instance_name
   ## Tags
