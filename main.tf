@@ -44,7 +44,7 @@ module "ec2_test" {
   project     = var.project
 }
 
-output "nginx_test_ip" {
+output "ec2_ip" {
   description = "Dirección IP pública de la instancia EC2"
   value       = module.ec2_test.public_ip
 }
