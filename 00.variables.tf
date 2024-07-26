@@ -72,16 +72,19 @@ variable "private_subnets_cidr" {
 # Instancia EC2
 variable "instance_name" {
   description = "Nombre de la instancia EC2"
+  default     = ""
   type        = string
 }
 
 variable "instance_type" {
   description = "Tipo de instancia EC2"
+  default     = ""
   type        = string
 }
 
 variable "ami_id" {
   description = "ID de la AMI EC2"
+  default     = ""
   type        = string
 }
 
@@ -118,38 +121,45 @@ variable "project" {
 
 variable "db_identifier" {
   description = "Identificador de la base de datos"
+  default     = "dbidentifier"
   type        = string
 }
 
 variable "db_storage" {
   description = "Almacenamiento de la base de datos"
-  type        = number
   default     = 0
+  type        = number
 }
 
 variable "db_engine" {
   description = "Motor de la base de datos"
+  default     = ""
   type        = string
 }
 variable "db_engine_version" {
   description = "Version del motor de la base de datos"
+  default     = ""
   type        = string
 }
 variable "rds_instance_type" {
   description = "Tipo de instancia RDS"
+  default     = ""
   type        = string
 }
 
 variable "db_name" {
   description = "Nombre de la base de datos"
+  default     = "dbname"
   type        = string
 }
 variable "db_username" {
   description = "Nombre de usuario admin de la base de datos"
+  default     = ""
   type        = string
 }
 variable "db_password" {
   description = "Contraseña de la base de datos"
+  default     = ""
   type        = string
 }
 
