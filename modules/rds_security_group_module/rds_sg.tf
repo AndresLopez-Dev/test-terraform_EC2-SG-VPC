@@ -1,21 +1,15 @@
-## Grupo de seguridad
-resource "aws_security_group" "ec2-sg" {
-  name   = var.sg_name
-  vpc_id = var.vpc_id
+resource "aws_security_group" "rds_aurora_security_group" {
+  name        = "${var.sg_name}-sg"
+  description = "Security group for Aurora Serverless"
+  vpc_id      = var.vpc_id
 
-  description = "Security group allowing SSH and HTTP access"
   ingress {
-    from_port   = 22
-    to_port     = 22
+    from_port   = var.sg_port
+    to_port     = var.sg_port
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+
   egress {
     from_port   = 0
     to_port     = 0

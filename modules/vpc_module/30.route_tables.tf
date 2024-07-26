@@ -1,6 +1,6 @@
 ## Route table
 resource "aws_route_table" "vpc_rt" {
-  vpc_id = aws_vpc.test_vpc.id
+  vpc_id = aws_vpc.vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -10,7 +10,7 @@ resource "aws_route_table" "vpc_rt" {
   tags = {
     Name = "rt-${var.vpc_name}-public"
   }
-  depends_on = [aws_vpc.test_vpc]
+  depends_on = [aws_vpc.vpc]
 }
 
 
@@ -23,16 +23,16 @@ resource "aws_route_table_association" "public_rt_subnets" {
 }
 
 resource "aws_route_table" "private_rt" {
-  vpc_id = aws_vpc.test_vpc.id
+  vpc_id = aws_vpc.vpc.id
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat_gw.id
   }
 
   tags = {
     Name = "rt-${var.vpc_name}-private"
   }
-  depends_on = [aws_vpc.test_vpc]
+  depends_on = [aws_vpc.vpc]
 }
 
 ## Asociacion de la tabla de rutas para subredes privadas

@@ -1,6 +1,6 @@
 ## Subnets privadas
 resource "aws_subnet" "private_subnets" {
-  vpc_id                  = aws_vpc.test_vpc.id
+  vpc_id                  = aws_vpc.vpc.id
   for_each                = var.priv_subnets_cidr
   cidr_block              = each.value
   availability_zone       = each.key
@@ -9,5 +9,5 @@ resource "aws_subnet" "private_subnets" {
   tags = {
     Name = "${var.vpc_name}-vpc-private-subnet-${each.key}"
   }
-  depends_on = [aws_vpc.test_vpc]
+  depends_on = [aws_vpc.vpc]
 }
